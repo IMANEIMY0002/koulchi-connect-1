@@ -2,10 +2,10 @@ import { ArrowRight, Users, TrendingUp, Shield, Briefcase, Award } from 'lucide-
 
 export default function ProviderCTA({ content, lang }: { content: any; lang: string }) {
   return (
-    <section id="provider" className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden">
-      {/* Éléments décoratifs */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full -translate-y-48 translate-x-48 blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary-600/10 rounded-full -translate-x-32 translate-y-32 blur-3xl"></div>
+    <section id="provider" className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white relative overflow-hidden">
+      {/* Éléments décoratifs - CORRIGÉS */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" style={{ transform: 'translate(40%, -40%)' }}></div>
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary-600/10 rounded-full blur-3xl" style={{ transform: 'translate(-40%, 40%)' }}></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -66,8 +66,6 @@ export default function ProviderCTA({ content, lang }: { content: any; lang: str
             </div>
           </div>
           
-         
-          
           <button className="group relative bg-gradient-to-r from-primary-500 via-primary-600 to-primary-700 hover:from-primary-600 hover:via-primary-700 hover:to-primary-800 text-white px-12 py-5 rounded-full font-bold text-lg flex items-center justify-center gap-3 mx-auto shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-105 overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
             
@@ -83,8 +81,6 @@ export default function ProviderCTA({ content, lang }: { content: any; lang: str
             
             <div className="absolute inset-0 rounded-full border-2 border-transparent group-hover:border-white/30 transition-all duration-500"></div>
           </button>
-          
-         
         </div>
       </div>
     </section>
