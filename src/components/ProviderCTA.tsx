@@ -3,7 +3,7 @@ import { ArrowRight, Users, TrendingUp, Shield, Briefcase, Award } from 'lucide-
 export default function ProviderCTA({ content, lang }: { content: any; lang: string }) {
   return (
     <section id="provider" className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white relative overflow-hidden">
-      {/* Éléments décoratifs - CORRIGÉS */}
+      {/* Éléments décoratifs  */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" style={{ transform: 'translate(40%, -40%)' }}></div>
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary-600/10 rounded-full blur-3xl" style={{ transform: 'translate(-40%, 40%)' }}></div>
       
