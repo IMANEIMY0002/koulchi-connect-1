@@ -10,10 +10,10 @@ export default function Hero({
   lang: string;
 }) {
   return (
-    <section className="pt-24 pb-16 bg-white overflow-hidden">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-10 items-center">
-          <div>
+    <section className="pt-24 pb-16 bg-white overflow-hidden w-full">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <div className="grid lg:grid-cols-2 gap-10 items-center w-full">
+          <div className="w-full">
             <h1
               className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-5 text-gray-800 ${
                 lang === "ar" ? "font-arabic" : ""
@@ -26,7 +26,6 @@ export default function Hero({
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
-
               <button className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-full font-medium flex items-center justify-center gap-2 transition-all">
                 <Download size={20} />
                 <span>{content.ctaUser}</span>
@@ -38,7 +37,6 @@ export default function Hero({
             </div>
 
             <div className="mt-10 flex flex-wrap gap-5">
-
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
                   <span className="text-green-600 text-lg">✓</span>
@@ -56,14 +54,14 @@ export default function Hero({
                   {content.common.verifiedPros}
                 </span>
               </div>
-
             </div>
           </div>
 
-          <div className="flex justify-center lg:justify-end">
-            <MobileMockup />
+          <div className="flex justify-center lg:justify-end w-full max-w-full overflow-hidden">
+            <div className="w-full max-w-md px-4">
+              <MobileMockup />
+            </div>
           </div>
-
         </div>
       </div>
     </section>
