@@ -1,5 +1,4 @@
-// src/types/index.ts
-export type Language = 'fr' | 'ar';
+export type Language = 'fr' | 'ar' | 'en';
 
 export interface ContentSections {
   nav: { services: string; features: string; providerCta: string; download: string };

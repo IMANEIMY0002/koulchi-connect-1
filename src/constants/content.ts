@@ -1,7 +1,7 @@
 // src/constants/content.ts
 import { ContentSections } from '@/types';
 
-export const TEXT_CONTENT: Record<'fr' | 'ar', ContentSections> = {
+export const TEXT_CONTENT: Record<'fr' | 'ar' | 'en', ContentSections> = {
   fr: {
     nav: { 
       services: "Services", 
@@ -16,9 +16,9 @@ export const TEXT_CONTENT: Record<'fr' | 'ar', ContentSections> = {
       ctaProvider: "Devenir Prestataire",
       trustedBy: "Faites confiance à nos experts vérifiés",
       common: {
-      guaranteedService: "Service Garanti", 
-      verifiedPros: "Professionnels Vérifiés", 
-    },
+        guaranteedService: "Service Garanti", 
+        verifiedPros: "Professionnels Vérifiés", 
+      },
     },
     howItWorks: {
       title: "Comment ça marche ?",
@@ -41,71 +41,27 @@ export const TEXT_CONTENT: Record<'fr' | 'ar', ContentSections> = {
       title: "Services Disponibles",
       subtitle: "Nous couvrons tous vos besoins domestiques",
       items: [
-        { 
-          name: "Plomberie", 
-          desc: "Fuites, installation sanitaire, débouchage." 
-        },
-        { 
-          name: "Électricité", 
-          desc: "Câblage, pannes, installation de luminaires." 
-        },
-        { 
-          name: "Nettoyage", 
-          desc: "Nettoyage à domicile, fin de chantier, bureaux." 
-        },
-        { 
-          name: "Peinture", 
-          desc: "Peinture intérieure, extérieure et décoration." 
-        },
-        { 
-          name: "Réparation", 
-          desc: "Réparations générales et travaux manuels divers." 
-        },
-        { 
-          name: "Montage", 
-          desc: "Montage de meubles et équipements domestiques." 
-        },
-        { 
-          name: "Climatisation", 
-          desc: "Entretien, réparation et installation de climatiseurs." 
-        },
-        { 
-          name: "Petits travaux", 
-          desc: "Accrochage étagères, cadres et petites modifications." 
-        },
+        { name: "Plomberie", desc: "Fuites, installation sanitaire, débouchage." },
+        { name: "Électricité", desc: "Câblage, pannes, installation de luminaires." },
+        { name: "Nettoyage", desc: "Nettoyage à domicile, fin de chantier, bureaux." },
+        { name: "Peinture", desc: "Peinture intérieure, extérieure et décoration." },
+        { name: "Réparation", desc: "Réparations générales et travaux manuels divers." },
+        { name: "Montage", desc: "Montage de meubles et équipements domestiques." },
+        { name: "Climatisation", desc: "Entretien, réparation et installation de climatiseurs." },
+        { name: "Petits travaux", desc: "Accrochage étagères, cadres et petites modifications." },
       ]
     },
     features: {
-       badge: "Nos Avantages",
+      badge: "Nos Avantages",
       title: "Pourquoi choisir KoulchiConnect ?",
-      
       subtitle: "Découvrez pourquoi des milliers de Marocains nous font confiance", 
-
       items: [
-        { 
-          title: "Artisans vérifiés", 
-          desc: "Identité et compétences rigoureusement contrôlées." 
-        },
-        { 
-          title: "Réservation rapide", 
-          desc: "Processus simple en 3 étapes pour trouver de l'aide." 
-        },
-        { 
-          title: "Gestion facile", 
-          desc: "Suivez toutes vos demandes depuis l'application." 
-        },
-        { 
-          title: "Avis & évaluations", 
-          desc: "Consultez les retours authentiques d'autres clients." 
-        },
-        { 
-          title: "Support bilingue", 
-          desc: "Assistance disponible en arabe et en français." 
-        },
-        { 
-          title: "Notifications", 
-          desc: "Restez informé à chaque étape de votre service." 
-        },
+        { title: "Artisans vérifiés", desc: "Identité et compétences rigoureusement contrôlées." },
+        { title: "Réservation rapide", desc: "Processus simple en 3 étapes pour trouver de l'aide." },
+        { title: "Gestion facile", desc: "Suivez toutes vos demandes depuis l'application." },
+        { title: "Avis & évaluations", desc: "Consultez les retours authentiques d'autres clients." },
+        { title: "Support bilingue", desc: "Assistance disponible en arabe et en français." },
+        { title: "Notifications", desc: "Restez informé à chaque étape de votre service." },
       ]
     },
     provider: {
@@ -127,7 +83,6 @@ export const TEXT_CONTENT: Record<'fr' | 'ar', ContentSections> = {
           desc: "Gérez vos demandes, planning et avis depuis une seule application"
         }
       },
-      
       stats: {
         title: "Rejoignez notre réseau en pleine croissance",
         providers: "Artisans actifs",
@@ -147,6 +102,7 @@ export const TEXT_CONTENT: Record<'fr' | 'ar', ContentSections> = {
       trademark: "Tous droits réservés. KoulchiConnect est une marque déposée."
     }
   },
+
   ar: {
     nav: { 
       services: "الخدمات", 
@@ -160,98 +116,44 @@ export const TEXT_CONTENT: Record<'fr' | 'ar', ContentSections> = {
       ctaUser: "تحميل التطبيق",
       ctaProvider: "انضم كمقاول",
       trustedBy: "ثق بخبرائنا الموثقين",
-        common: {
-      guaranteedService: "خدمة مضمونة",
-      verifiedPros: "محترفون موثقون", 
-    },
+      common: {
+        guaranteedService: "خدمة مضمونة",
+        verifiedPros: "محترفون موثقون", 
+      },
     },
     howItWorks: {
       title: "كيف يعمل التطبيق؟",
       steps: [
-        { 
-          title: "اختر خدمة", 
-          desc: "اختر من بين مجموعة واسعة من الخدمات: السباكة، الكهرباء، التنظيف..." 
-        },
-        { 
-          title: "اختر الحرفي", 
-          desc: "قارن الملفات الشخصية، التقييمات والأسعار للمحترفين المتاحين." 
-        },
-        { 
-          title: "احجز فوراً", 
-          desc: "أكد طلبك وتابع وصول المقاول في الوقت الفعلي." 
-        },
+        { title: "اختر خدمة", desc: "اختر من بين مجموعة واسعة من الخدمات: السباكة، الكهرباء، التنظيف..." },
+        { title: "اختر الحرفي", desc: "قارن الملفات الشخصية، التقييمات والأسعار للمحترفين المتاحين." },
+        { title: "احجز فوراً", desc: "أكد طلبك وتابع وصول المقاول في الوقت الفعلي." },
       ]
     },
     services: {
       title: "الخدمات المتوفرة",
       subtitle: "نغطي جميع احتياجات منزلك",
       items: [
-        { 
-          name: "السباكة", 
-          desc: "تسربات، تركيبات صحية، تسليك المجاري." 
-        },
-        { 
-          name: "الكهرباء", 
-          desc: "التمديدات، الأعطال، تركيب الإنارة." 
-        },
-        { 
-          name: "التنظيف", 
-          desc: "تنظيف المنازل، نهاية الأشغال، المكاتب." 
-        },
-        { 
-          name: "الصباغة", 
-          desc: "صباغة داخلية وخارجية وديكور." 
-        },
-        { 
-          name: "الإصلاحات", 
-          desc: "إصلاحات عامة وأعمال يدوية متنوعة." 
-        },
-        { 
-          name: "التركيب", 
-          desc: "تركيب الأثاث والمعدات المنزلية." 
-        },
-        { 
-          name: "التكييف", 
-          desc: "صيانة وإصلاح وتركيب المكيفات." 
-        },
-        { 
-          name: "أعمال صغيرة", 
-          desc: "تعليق رفوف، إطارات وتعديلات بسيطة." 
-        },
+        { name: "السباكة", desc: "تسربات، تركيبات صحية، تسليك المجاري." },
+        { name: "الكهرباء", desc: "التمديدات، الأعطال، تركيب الإنارة." },
+        { name: "التنظيف", desc: "تنظيف المنازل، نهاية الأشغال، المكاتب." },
+        { name: "الصباغة", desc: "صباغة داخلية وخارجية وديكور." },
+        { name: "الإصلاحات", desc: "إصلاحات عامة وأعمال يدوية متنوعة." },
+        { name: "التركيب", desc: "تركيب الأثاث والمعدات المنزلية." },
+        { name: "التكييف", desc: "صيانة وإصلاح وتركيب المكيفات." },
+        { name: "أعمال صغيرة", desc: "تعليق رفوف، إطارات وتعديلات بسيطة." },
       ]
     },
     features: {
-       badge: "مزايا",
-       subtitle: "اكتشف لماذا يثق بنا آلاف المغاربة", 
-    
-
+      badge: "مزايا",
+      subtitle: "اكتشف لماذا يثق بنا آلاف المغاربة", 
       title: "لماذا تختار كولشي كونكت؟",
-     
       items: [
-        { 
-          title: "حرفيون تم التحقق منهم", 
-          desc: "تم فحص الهوية والمهارات بدقة." 
-        },
-        { 
-          title: "حجز سريع", 
-          desc: "عملية بسيطة في 3 خطوات للعثور على المساعدة." 
-        },
-        { 
-          title: "إدارة سهلة", 
-          desc: "تابع جميع طلباتك من التطبيق." 
-        },
-        { 
-          title: "تقييمات وآراء", 
-          desc: "اطلع على آراء حقيقية من عملاء آخرين." 
-        },
-        { 
-          title: "دعم ثنائي اللغة", 
-          desc: "مساعدة متاحة باللغتين العربية والفرنسية." 
-        },
-        { 
-          title: "إشعارات", 
-          desc: "ابق على اطلاع في كل مرحلة من مراحل خدمتك." 
-        },
+        { title: "حرفيون تم التحقق منهم", desc: "تم فحص الهوية والمهارات بدقة." },
+        { title: "حجز سريع", desc: "عملية بسيطة في 3 خطوات للعثور على المساعدة." },
+        { title: "إدارة سهلة", desc: "تابع جميع طلباتك من التطبيق." },
+        { title: "تقييمات وآراء", desc: "اطلع على آراء حقيقية من عملاء آخرين." },
+        { title: "دعم ثنائي اللغة", desc: "مساعدة متاحة باللغتين العربية والفرنسية." },
+        { title: "إشعارات", desc: "ابق على اطلاع في كل مرحلة من مراحل خدمتك." },
       ]
     },
     provider: {
@@ -279,7 +181,6 @@ export const TEXT_CONTENT: Record<'fr' | 'ar', ContentSections> = {
         satisfied: "عملاء راضون",
         cities: "مدن مغطاة"
       },
-     
     },
     footer: {
       about: "أول منصة مغربية مخصصة لخدمات الحرفيين والصيانة المنزلية.",
@@ -291,6 +192,107 @@ export const TEXT_CONTENT: Record<'fr' | 'ar', ContentSections> = {
       joinUs: "انضم إلينا",
       location: "الدار البيضاء، المغرب",
       trademark: "جميع الحقوق محفوظة. KoulchiConnect هي علامة تجارية مسجلة."
+    }
+  },
+
+  en: {
+    nav: { 
+      services: "Services", 
+      features: "Features", 
+      providerCta: "Become a Provider", 
+      download: "Download" 
+    },
+    hero: {
+      title: "Reliable craftsmen, at your fingertips.",
+      subtitle: "KoulchiConnect instantly connects you with the best professionals for all your repair and maintenance needs in Morocco.",
+      ctaUser: "Download the app",
+      ctaProvider: "Become a Provider",
+      trustedBy: "Trust our verified experts",
+      common: {
+        guaranteedService: "Guaranteed Service", 
+        verifiedPros: "Verified Professionals", 
+      },
+    },
+    howItWorks: {
+      title: "How does it work?",
+      steps: [
+        { 
+          title: "Select a service", 
+          desc: "Choose from a wide range of services: plumbing, electricity, cleaning..." 
+        },
+        { 
+          title: "Choose a craftsman", 
+          desc: "Compare profiles, reviews and prices of available professionals." 
+        },
+        { 
+          title: "Book instantly", 
+          desc: "Confirm your request and track your provider's arrival in real time." 
+        },
+      ]
+    },
+    services: {
+      title: "Available Services",
+      subtitle: "We cover all your household needs",
+      items: [
+        { name: "Plumbing", desc: "Leaks, sanitary installation, unclogging." },
+        { name: "Electricity", desc: "Wiring, breakdowns, lighting installation." },
+        { name: "Cleaning", desc: "Home cleaning, post-construction, offices." },
+        { name: "Painting", desc: "Interior, exterior painting and decoration." },
+        { name: "Repair", desc: "General repairs and various manual work." },
+        { name: "Assembly", desc: "Furniture and household equipment assembly." },
+        { name: "Air Conditioning", desc: "Maintenance, repair and installation of air conditioners." },
+        { name: "Small jobs", desc: "Hanging shelves, frames and small modifications." },
+      ]
+    },
+    features: {
+      badge: "Our Advantages",
+      title: "Why choose KoulchiConnect?",
+      subtitle: "Discover why thousands of Moroccans trust us", 
+      items: [
+        { title: "Verified craftsmen", desc: "Identity and skills rigorously checked." },
+        { title: "Quick booking", desc: "Simple 3-step process to find help." },
+        { title: "Easy management", desc: "Track all your requests from the app." },
+        { title: "Reviews & ratings", desc: "Check authentic feedback from other customers." },
+        { title: "Bilingual support", desc: "Assistance available in Arabic and French." },
+        { title: "Notifications", desc: "Stay informed at every step of your service." },
+      ]
+    },
+    provider: {
+      title: "Are you a qualified professional?",
+      desc: "Join KoulchiConnect and grow your business. Reach thousands of potential customers without marketing effort.",
+      cta: "Join KoulchiConnect and grow your business",
+      badge: "For craftsmen and professionals",
+      benefits: {
+        income: {
+          title: "Stable income",
+          desc: "A regular flow of requests for stable and predictable income"
+        },
+        clients: {
+          title: "New customers",
+          desc: "Access thousands of potential customers in your area"
+        },
+        management: {
+          title: "Simplified management",
+          desc: "Manage your requests, schedule and reviews from a single app"
+        }
+      },
+      stats: {
+        title: "Join our growing network",
+        providers: "Active craftsmen",
+        satisfied: "Satisfied customers",
+        cities: "Cities covered"
+      },
+    },
+    footer: {
+      about: "Morocco's first platform dedicated to craftsmen and home maintenance services.",
+      links: "Quick links",
+      contact: "Contact",
+      tagline: "The 1st home services platform",
+      followUs: "Follow us",
+      home: "Home",
+      joinUs: "Become a provider",
+      location: "Casablanca, Morocco",
+      trademark: "All rights reserved. KoulchiConnect is a registered trademark."
     }
   }
 };
