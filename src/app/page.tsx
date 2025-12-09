@@ -11,6 +11,7 @@ import Features from '@/components/Features';
 import ProviderCTA from '@/components/ProviderCTA';
 import Footer from '@/components/Footer';
 
+
 export default function Home() {
   const [lang, setLang] = useState<Language>(() => {
     if (typeof window === 'undefined') return 'fr';
