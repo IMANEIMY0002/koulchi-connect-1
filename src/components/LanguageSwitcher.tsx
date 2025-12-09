@@ -12,7 +12,6 @@ export default function LanguageSwitcher({
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Fermer le dropdown quand on clique ailleurs
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -33,7 +32,6 @@ export default function LanguageSwitcher({
 
   return (
     <div className="relative" ref={dropdownRef}>
-      {/* Bouton principal */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-gray-200 bg-white hover:border-gray-300 hover:shadow-sm transition-all duration-200"
@@ -48,24 +46,16 @@ export default function LanguageSwitcher({
         />
       </button>
 
-      {/* Dropdown Menu */}
       {isOpen && (
         <>
-          {/* Overlay transparent pour mobile */}
           <div 
             className="fixed inset-0 z-40 md:hidden" 
             onClick={() => setIsOpen(false)}
           />
           
           <div className="absolute right-0 mt-3 w-56 bg-white border border-gray-200 rounded-2xl shadow-xl py-2 z-50 animate-slideDown">
-            {/* Header */}
-            <div className="px-4 py-3 border-b border-gray-100">
-              <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                Select Region
-              </p>
-            </div>
+           
 
-            {/* Liste des langues */}
             <div className="py-2">
               {languages.map((lang) => {
                 const isActive = currentLang === lang.code;

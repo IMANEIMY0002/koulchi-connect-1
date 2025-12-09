@@ -10,7 +10,7 @@ export default function Hero({
   lang: string;
 }) {
   return (
-    <section className="pt-24 pb-16 bg-white overflow-hidden w-full">
+    <section className="pt-24 pb-16 bg-[#F8FAFC] overflow-hidden w-full">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-10 items-center w-full">
           <div className="w-full">

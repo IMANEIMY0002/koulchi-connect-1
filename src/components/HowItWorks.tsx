@@ -7,7 +7,7 @@ export default function HowItWorks({ content, lang }: { content: any; lang: stri
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-20 bg-gray-50 overflow-hidden">
+    <section className="py-20 bg-white overflow-hidden"> 
 
       <style>{`
         @keyframes float {
@@ -62,7 +62,6 @@ export default function HowItWorks({ content, lang }: { content: any; lang: stri
                   }}
                 >
 
-                  {/* Numéro */}
                   <div
                     className={`absolute -top-4 -right-4 w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all duration-300 ${
                       isHovered ? 'scale-110' : ''
@@ -76,7 +75,6 @@ export default function HowItWorks({ content, lang }: { content: any; lang: stri
                     <span className="text-white font-bold text-lg">{stepNumber}</span>
                   </div>
 
-                  {/* Icon */}
                   <div
                     className={`w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-white shadow-md transition-all duration-500 ${
                       isHovered ? 'scale-110' : ''
@@ -90,7 +88,6 @@ export default function HowItWorks({ content, lang }: { content: any; lang: stri
                     <Icon size={36} strokeWidth={2} />
                   </div>
 
-                  {/* Title + Desc */}
                   <h3
                     className={`text-xl font-bold mb-4 transition-colors duration-300 ${
                       isHovered ? 'text-blue-600' : 'text-gray-900'

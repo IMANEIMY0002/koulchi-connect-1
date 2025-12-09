@@ -56,16 +56,13 @@ export default function Navbar({ lang, content, setLang }: { lang: Language; con
         </div>
       </nav>
 
-      {/* Menu Mobile - CORRIGÉ */}
       {mobileOpen && (
         <>
-          {/* Overlay */}
           <div 
             className="fixed inset-0 bg-black/50 z-40 md:hidden"
             onClick={() => setMobileOpen(false)}
           />
           
-          {/* Menu */}
           <div className="fixed top-[73px] left-0 right-0 bg-white shadow-2xl z-40 md:hidden max-h-[calc(100vh-73px)] overflow-y-auto">
             <div className="p-6 space-y-4">
               <a 
