@@ -1,6 +1,9 @@
+"use client";
+
 import { Download } from "lucide-react";
 import MobileMockup from "@/components/MobileMockup";
 import { ContentSections } from "@/types";
+import { useEffect, useState } from "react";
 
 export default function Hero({
   content,
@@ -9,18 +12,42 @@ export default function Hero({
   content: ContentSections["hero"];
   lang: string;
 }) {
+  const [displayedTitle, setDisplayedTitle] = useState("");
+  const fullTitle = content.title;
+
+  useEffect(() => {
+    let i = 0;
+    setDisplayedTitle("");
+
+    const typingInterval = setInterval(() => {
+      if (i < fullTitle.length) {
+        setDisplayedTitle(fullTitle.substring(0, i + 1));
+        i++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, 70); 
+
+    return () => clearInterval(typingInterval);
+  }, [fullTitle]);
+
   return (
     <section className="pt-24 pb-16 bg-[#F8FAFC] overflow-hidden w-full">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-10 items-center w-full">
+
+          
           <div className="w-full">
             <h1
-              className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-5 text-gray-800 ${
+              className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-5 text-gray-800 inline-flex items-center ${
                 lang === "ar" ? "font-arabic" : ""
               }`}
             >
-              {content.title}
+              <span>{displayedTitle}</span>
+             
+              <span className="ml-1 inline-block w-1 h-12 bg-blue-600 animate-ping" />
             </h1>
+
             <p className="text-lg md:text-xl text-gray-600 mb-7 leading-relaxed">
               {content.subtitle}
             </p>
@@ -47,7 +74,7 @@ export default function Hero({
               </div>
 
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center">
                   <span className="text-primary-600 text-lg">⭐</span>
                 </div>
                 <span className="text-gray-700 font-medium">
@@ -57,11 +84,13 @@ export default function Hero({
             </div>
           </div>
 
+          {/* Mockup mobile */}
           <div className="flex justify-center lg:justify-end w-full max-w-full overflow-hidden">
             <div className="w-full max-w-md px-4">
               <MobileMockup />
             </div>
           </div>
+
         </div>
       </div>
     </section>

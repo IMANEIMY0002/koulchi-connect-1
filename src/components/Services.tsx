@@ -1,36 +1,107 @@
+'use client';
+
 import { Droplets, Zap, Sparkles, Paintbrush, Hammer, Home, Wind, Wrench } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 const icons = [Droplets, Zap, Sparkles, Paintbrush, Hammer, Home, Wind, Wrench];
 
 export default function Services({ content, lang }: { content: any; lang: string }) {
+  const [shuffledOrder, setShuffledOrder] = useState<number[]>([]);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  // Mélange
+  useEffect(() => {
+    if (shuffledOrder.length === 0) {
+      const order = content.items.map((_: any, i: number) => i);
+      const shuffled = [...order].sort(() => Math.random() - 0.5);
+      setShuffledOrder(shuffled);
+    }
+  }, []); 
+
+  // Construire les items affichés selon l'ordre mélangé
+  const displayItems = shuffledOrder.length > 0
+    ? shuffledOrder.map((originalIndex) => ({
+        ...content.items[originalIndex],
+        OriginalIcon: icons[originalIndex] || Home,
+        id: originalIndex,
+      }))
+    : content.items.map((item: any, i: number) => ({
+        ...item,
+        OriginalIcon: icons[i] || Home,
+        id: i,
+      }));
+
   return (
     <section id="services" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
+        
+        
         <div className="text-center mb-16">
-          <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 ${lang === 'ar' ? 'font-arabic' : ''}`}>
-            {content.title}
-          </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            {content.subtitle}
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${lang === 'ar' ? 'font-arabic' : ''}`}>
+              {content.title}
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              {content.subtitle}
+            </p>
+          </motion.div>
         </div>
+        
+        {/* Grid Services */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-          {content.items.map((item: any, i: number) => {
-            const Icon = icons[i];
+          {displayItems.map((item: any, idx: number) => {
+            const Icon = item.OriginalIcon;
+            
             return (
-              <div 
-                key={i} 
-                className="bg-white border border-gray-200 rounded-xl p-5 text-center group hover:shadow-lg hover:border-primary-100 transition-all"
+              <div
+                key={item?.id}
+                className="relative group block p-2 h-full w-full"
+                onMouseEnter={() => setHoveredIndex(idx)}
+                onMouseLeave={() => setHoveredIndex(null)}
               >
-                <div className="w-16 h-16 bg-primary-50 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-600 transition-colors">
-                  <Icon size={28} className="text-primary-600 group-hover:text-white transition-colors" />
+               
+                <AnimatePresence>
+                  {hoveredIndex === idx && (
+                    <motion.span
+                      className="absolute inset-0 h-full w-full bg-primary-100/50 block rounded-xl"
+                      layoutId="hoverBackground"
+                      initial={{ opacity: 0 }}
+                      animate={{
+                        opacity: 1,
+                        transition: { duration: 0.15 },
+                      }}
+                      exit={{
+                        opacity: 0,
+                        transition: { duration: 0.15, delay: 0.2 },
+                      }}
+                    />
+                  )}
+                </AnimatePresence>
+                
+                {/* Card */}
+                <div className="relative z-20 h-full w-full p-5 overflow-hidden bg-white border border-gray-200 group-hover:border-primary-200 rounded-xl transition-all duration-300 shadow-sm group-hover:shadow-lg">
+                  
+                  {/* Icon */}
+                  <div className="w-16 h-16 bg-primary-50 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-600 group-hover:scale-110 transition-all duration-300">
+                    <Icon size={28} className="text-primary-600 group-hover:text-white transition-colors duration-300" />
+                  </div>
+                  
+                  {/* Title */}
+                  <h3 className={`font-bold text-gray-800 mb-2 text-center group-hover:text-primary-700 transition-colors ${lang === 'ar' ? 'font-arabic' : ''}`}>
+                    {item.name}
+                  </h3>
+                  
+                  {/* Description */}
+                  <p className="text-sm text-gray-600 leading-relaxed text-center">
+                    {item.desc}
+                  </p>
                 </div>
-                <h3 className={`font-bold text-gray-800 mb-2 ${lang === 'ar' ? 'font-arabic' : ''}`}>
-                  {item.name}
-                </h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  {item.desc}
-                </p>
               </div>
             );
           })}
