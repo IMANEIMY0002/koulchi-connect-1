@@ -10,6 +10,8 @@ import Services from '@/components/Services';
 import Features from '@/components/Features';
 import ProviderCTA from '@/components/ProviderCTA';
 import Footer from '@/components/Footer';
+import Gallery from '@/components/Gallery';
+
 
 
 export default function Home() {
@@ -53,6 +55,7 @@ export default function Home() {
       <HowItWorks content={t.howItWorks} lang={lang} />
       <Services content={t.services} lang={lang} />
       <Features content={t.features} lang={lang} />
+      <Gallery content={t.gallery} lang={lang} />
       <ProviderCTA content={t.provider} lang={lang} />
       <Footer content={t.footer} nav={t.nav} lang={lang} />
     </div>

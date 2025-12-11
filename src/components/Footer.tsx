@@ -1,11 +1,16 @@
 import { Facebook, Instagram, Twitter, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Footer({ content, nav, lang }: { content: any; nav: any; lang: string }) {
   return (
-    <footer className="bg-white border-t border-gray-200 pt-20 pb-10">
+    <footer className="bg-white border-t border-gray-100 pt-20 pb-10">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 mb-16">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
             <div className="flex items-center gap-3 mb-8">
               <div className="w-12 h-12 bg-gradient-to-br from-primary-600 to-primary-500 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg">
                 K
@@ -35,20 +40,26 @@ export default function Footer({ content, nav, lang }: { content: any; nav: any;
                   { Icon: Twitter, color: 'hover:bg-[#1DA1F2] hover:text-white', bg: 'bg-sky-50 text-[#1DA1F2]' },
                   { Icon: Linkedin, color: 'hover:bg-[#0A66C2] hover:text-white', bg: 'bg-blue-50 text-[#0A66C2]' }
                 ].map((social, i) => (
-                  <a 
+                  <motion.a 
                     key={i} 
                     href="#" 
-                    className={`w-12 h-12 ${social.bg} rounded-full flex items-center justify-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${social.color}`}
+                    whileHover={{ y: -5 }}
+                    className={`w-12 h-12 ${social.bg} rounded-full flex items-center justify-center transition-all duration-300 shadow-sm ${social.color}`}
                   >
                     <social.Icon size={20} />
-                  </a>
+                  </motion.a>
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
 
           <div className="grid md:grid-cols-2 gap-12">
-            <div>
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+            >
               <h4 className="font-bold text-gray-900 text-lg mb-8">
                 {content.links}
               </h4>
@@ -62,17 +73,22 @@ export default function Footer({ content, nav, lang }: { content: any; nav: any;
                   <li key={i}>
                     <a 
                       href={link.href} 
-                      className="text-gray-500 hover:text-primary-600 font-medium transition-colors duration-200 flex items-center gap-2"
+                      className="text-gray-500 hover:text-primary-600 font-medium transition-colors duration-200 flex items-center gap-2 group"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary-200 opacity-0 transition-opacity hover:opacity-100"></span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary-200 group-hover:bg-primary-600 transition-colors"></span>
                       {link.label}
                     </a>
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
 
-            <div>
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+            >
               <h4 className="font-bold text-gray-900 text-lg mb-8">
                 {content.contact}
               </h4>
@@ -92,11 +108,11 @@ export default function Footer({ content, nav, lang }: { content: any; nav: any;
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
 
-         <div className="border-t border-gray-200 pt-8">
+         <div className="border-t border-gray-100 pt-8">
           <div className="mt-6 text-center">
             <p className="text-gray-400 text-xs">
               {content.trademark}

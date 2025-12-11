@@ -1,5 +1,6 @@
 import { Search, UserCheck, CalendarCheck } from 'lucide-react';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const steps = [Search, UserCheck, CalendarCheck];
 
@@ -7,107 +8,94 @@ export default function HowItWorks({ content, lang }: { content: any; lang: stri
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-20 bg-white overflow-hidden"> 
-
-      <style>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-10px); }
-        }
-
-        @keyframes pulse-glow {
-          0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
-          50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.6); }
-        }
-      `}</style>
-
+    <section className="py-24 bg-white overflow-hidden"> 
       <div className="container mx-auto px-4">
 
-        <div className="text-center mb-16">
-          <h2
+        <div className="text-center mb-20">
+          <motion.h2
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
             className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 ${lang === 'ar' ? 'font-arabic' : ''}`}
           >
             {content.title}
-          </h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
+          </motion.h2>
+          <motion.div 
+             initial={{ width: 0 }}
+             whileInView={{ width: 80 }}
+             transition={{ duration: 0.8 }}
+             viewport={{ once: true }}
+             className="h-1.5 bg-blue-600 mx-auto rounded-full"
+          />
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto items-start">
+        <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto items-start relative">
+            <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-1 bg-gray-100 -z-0">
+                <motion.div 
+                    initial={{ scaleX: 0 }}
+                    whileInView={{ scaleX: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1.5, ease: "easeInOut" }}
+                    className="h-full bg-blue-100 origin-left"
+                />
+            </div>
+
           {content.steps.map((step: any, i: number) => {
             const Icon = steps[i];
             const stepNumber = i + 1;
             const isHovered = hoveredIndex === i;
 
             return (
-              <div
+              <motion.div
                 key={i}
-                className="relative h-full"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.2, duration: 0.5 }}
+                className="relative h-full pt-4"
                 onMouseEnter={() => setHoveredIndex(i)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
-                <div
-                  className={`bg-white rounded-2xl shadow-lg p-8 text-center transition-all duration-500 h-full flex flex-col ${
-                    isHovered ? 'transform -translate-y-4 shadow-2xl' : ''
-                  }`}
-                  style={{
-                    background: isHovered
-                      ? 'linear-gradient(135deg, #eef7ffff 0%, #75a1be2c 100%)'
-                      : '#ffffff',
-                    border: isHovered
-                      ? '1px solid #cadeffff'
-                      : '2px solid #cbd3e4ff',
-                    boxShadow: isHovered
-                      ? '0 20px 40px rgba(0, 63, 163, 0.21)'
-                      : '0 4px 6px rgba(0,0,0,0.23)',
+                <motion.div
+                  animate={{ 
+                      y: isHovered ? -10 : 0,
+                      boxShadow: isHovered 
+                        ? '0 25px 50px -12px rgba(59, 130, 246, 0.25)' 
+                        : '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
                   }}
+                  className="bg-white rounded-3xl p-8 text-center h-full flex flex-col relative border border-gray-100 z-10"
                 >
-
-                  <div
-                    className={`absolute -top-4 -right-4 w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all duration-300 ${
-                      isHovered ? 'scale-110' : ''
-                    }`}
-                    style={{
-                      background: isHovered
-                        ? 'linear-gradient(135deg, #fb923c 0%, #f97316 100%)'
-                        : '#fb923c',
-                    }}
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ delay: i * 0.2 + 0.3, type: "spring" }}
+                    className="absolute -top-6 -right-4 w-12 h-12 rounded-2xl bg-gradient-to-br from-orange-400 to-orange-500 flex items-center justify-center shadow-lg text-white font-bold text-xl rotate-12"
                   >
-                    <span className="text-white font-bold text-lg">{stepNumber}</span>
-                  </div>
+                    {stepNumber}
+                  </motion.div>
 
-                  <div
-                    className={`w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-white shadow-md transition-all duration-500 ${
-                      isHovered ? 'scale-110' : ''
-                    }`}
-                    style={{
-                      background: isHovered
-                        ? 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)'
-                        : '#3b82f6',
+                  <motion.div
+                    animate={{ 
+                        scale: isHovered ? 1.1 : 1,
+                        backgroundColor: isHovered ? '#1d4ed8' : '#3b82f6'
                     }}
+                    className="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-8 text-white shadow-xl shadow-blue-200"
                   >
-                    <Icon size={36} strokeWidth={2} />
-                  </div>
+                    <Icon size={40} strokeWidth={1.5} />
+                  </motion.div>
 
                   <h3
-                    className={`text-xl font-bold mb-4 transition-colors duration-300 ${
+                    className={`text-2xl font-bold mb-4 transition-colors duration-300 ${
                       isHovered ? 'text-blue-600' : 'text-gray-900'
                     } ${lang === 'ar' ? 'font-arabic' : ''}`}
                   >
                     {step.title}
                   </h3>
 
-                  <p className="text-gray-600 leading-relaxed flex-grow">{step.desc}</p>
-                </div>
-
-                {isHovered && (
-                  <div
-                    className="absolute -z-10 w-full h-full top-0 left-0 rounded-2xl"
-                    style={{
-                      background: 'radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 70%)',
-                    }}
-                  />
-                )}
-              </div>
+                  <p className="text-gray-600 leading-relaxed flex-grow text-lg">{step.desc}</p>
+                </motion.div>
+              </motion.div>
             );
           })}
         </div>

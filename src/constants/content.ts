@@ -100,6 +100,32 @@ export const TEXT_CONTENT: Record<'fr' | 'ar' | 'en', ContentSections> = {
       joinUs: "Devenir prestataire",
       location: "Casablanca, Maroc",
       trademark: "Tous droits réservés. KoulchiConnect est une marque déposée."
+    },
+       gallery: {
+      title: "Nos Réalisations",
+      subtitle: "Découvrez les projets réalisés par nos artisans qualifiés",
+      images: [
+        {
+          title: "Rénovation Complète",
+          category: "Plomberie",
+          image: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=1200&q=80"
+        },
+        {
+          title: "Installation Électrique",
+          category: "Électricité",
+          image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&q=80"
+        },
+        {
+          title: "Peinture Moderne",
+          category: "Peinture",
+          image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=1200&q=80"
+        },
+        {
+          title: "Nettoyage Professionnel",
+          category: "Nettoyage",
+          image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&q=80"
+        },
+      ]
     }
   },
 
@@ -192,6 +218,32 @@ export const TEXT_CONTENT: Record<'fr' | 'ar' | 'en', ContentSections> = {
       joinUs: "انضم إلينا",
       location: "الدار البيضاء، المغرب",
       trademark: "جميع الحقوق محفوظة. KoulchiConnect هي علامة تجارية مسجلة."
+    },
+       gallery: {
+      title: "إنجازاتنا",
+      subtitle: "اكتشف المشاريع التي أنجزها حرفيونا المؤهلون",
+      images: [
+        {
+          title: "تجديد كامل",
+          category: "السباكة",
+          image: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=1200&q=80"
+        },
+        {
+          title: "التركيب الكهربائي",
+          category: "الكهرباء",
+          image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&q=80"
+        },
+        {
+          title: "دهان عصري",
+          category: "الصباغة",
+          image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=1200&q=80"
+        },
+        {
+          title: "تنظيف احترافي",
+          category: "التنظيف",
+          image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&q=80"
+        },
+      ]
     }
   },
 
@@ -293,6 +345,32 @@ export const TEXT_CONTENT: Record<'fr' | 'ar' | 'en', ContentSections> = {
       joinUs: "Become a provider",
       location: "Casablanca, Morocco",
       trademark: "All rights reserved. KoulchiConnect is a registered trademark."
+    },
+     gallery: {
+      title: "Our Achievements",
+      subtitle: "Discover projects completed by our qualified artisans",
+      images: [
+        {
+          title: "Complete Renovation",
+          category: "Plumbing",
+          image: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=1200&q=80"
+        },
+        {
+          title: "Electrical Installation",
+          category: "Electricity",
+          image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&q=80"
+        },
+        {
+          title: "Modern Painting",
+          category: "Painting",
+          image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=1200&q=80"
+        },
+        {
+          title: "Professional Cleaning",
+          category: "Cleaning",
+          image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&q=80"
+        },
+      ]
     }
   }
 };

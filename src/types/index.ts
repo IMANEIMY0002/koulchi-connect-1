@@ -37,5 +37,14 @@ export interface ContentSections {
     trademark: string;
     location: string;
   };
-  
+   gallery: {
+    title: string;
+    subtitle: string;
+    images: {
+      title: string;
+      category: string;
+      image: string;
+    }[];
+  };
 }
+  
