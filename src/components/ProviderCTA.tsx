@@ -4,25 +4,25 @@ import { motion } from 'framer-motion';
 export default function ProviderCTA({ content, lang }: { content: any; lang: string }) {
   return (
     <section id="provider" className="py-24 bg-[#0f172a] text-white relative overflow-hidden">
-      <motion.div 
-        animate={{ 
-            scale: [1, 1.2, 1],
-            opacity: [0.1, 0.2, 0.1],
-            x: [0, 50, 0]
+      <motion.div
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.1, 0.2, 0.1],
+          x: [0, 50, 0]
         }}
         transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-        className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600 rounded-full blur-[100px]" 
+        className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600 rounded-full blur-[100px]"
       />
-      <motion.div 
-        animate={{ 
-            scale: [1, 1.3, 1],
-            opacity: [0.1, 0.15, 0.1],
-            x: [0, -50, 0]
+      <motion.div
+        animate={{
+          scale: [1, 1.3, 1],
+          opacity: [0.1, 0.15, 0.1],
+          x: [0, -50, 0]
         }}
         transition={{ duration: 15, repeat: Infinity, ease: "linear", delay: 1 }}
-        className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-500 rounded-full blur-[100px]" 
+        className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-500 rounded-full blur-[100px]"
       />
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           

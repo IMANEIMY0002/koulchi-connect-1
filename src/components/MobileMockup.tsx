@@ -17,7 +17,6 @@ export default function MobileMockup() {
   return (
     <div className="flex items-center justify-center w-full py-8">
       <div className="relative w-72 md:w-80 h-[500px] md:h-[560px] bg-black rounded-[3rem] shadow-2xl border-8 border-black overflow-hidden transform rotate-[-2deg] hover:rotate-0 transition-all duration-500 max-w-full">
-
         <div className="bg-slate-50 w-full h-full relative overflow-hidden flex flex-col">
 
           <div className="bg-blue-600 text-white px-6 pt-3 pb-1 flex justify-between items-center text-xs">

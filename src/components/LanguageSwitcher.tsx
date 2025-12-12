@@ -1,13 +1,13 @@
-import { Language } from '@/types';
+import { Language } from '../types';
 import { Globe, ChevronDown, Check } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 
-export default function LanguageSwitcher({ 
-  currentLang, 
-  onToggle 
-}: { 
-  currentLang: Language; 
-  onToggle: (l: Language) => void 
+export default function LanguageSwitcher({
+  currentLang,
+  onToggle
+}: {
+  currentLang: Language;
+  onToggle: (l: Language) => void
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -34,15 +34,15 @@ export default function LanguageSwitcher({
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-gray-200 bg-white hover:border-gray-300 hover:shadow-sm transition-all duration-200"
+        className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:border-gray-300 dark:hover:border-slate-600 hover:shadow-sm transition-all duration-200"
       >
-        <Globe size={18} className="text-blue-600" />
-        <span className="font-semibold text-gray-900 text-sm uppercase tracking-wide">
+        <Globe size={18} className="text-blue-600 dark:text-blue-400" />
+        <span className="font-semibold text-gray-900 dark:text-white text-sm uppercase tracking-wide">
           {currentLanguage?.short}
         </span>
-        <ChevronDown 
-          size={16} 
-          className={`text-gray-500 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} 
+        <ChevronDown
+          size={16}
+          className={`text-gray-500 dark:text-gray-400 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
         />
       </button>
 
@@ -53,9 +53,8 @@ export default function LanguageSwitcher({
             onClick={() => setIsOpen(false)}
           />
           
-          <div className="absolute right-0 mt-3 w-56 bg-white border border-gray-200 rounded-2xl shadow-xl py-2 z-50 animate-slideDown">
+          <div className="absolute right-0 mt-3 w-56 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow-xl py-2 z-50 animate-slideDown">
            
-
             <div className="py-2">
               {languages.map((lang) => {
                 const isActive = currentLang === lang.code;
@@ -67,32 +66,32 @@ export default function LanguageSwitcher({
                       onToggle(lang.code);
                       setIsOpen(false);
                     }}
-                    className={`w-full text-left px-4 py-3 hover:bg-gray-50 transition-colors duration-150 flex items-center justify-between group ${
-                      isActive ? 'bg-blue-50' : ''
+                    className={`w-full text-left px-4 py-3 hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors duration-150 flex items-center justify-between group ${
+                      isActive ? 'bg-blue-50 dark:bg-slate-700' : ''
                     }`}
                   >
                     <div className="flex items-center gap-3">
                       <span className={`text-xs font-bold px-2 py-1 rounded ${
                         isActive 
                           ? 'bg-blue-600 text-white' 
-                          : 'bg-gray-100 text-gray-600 group-hover:bg-gray-200'
+                          : 'bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300 group-hover:bg-gray-200 dark:group-hover:bg-slate-600'
                       }`}>
                         {lang.region}
                       </span>
                       <div>
                         <p className={`font-semibold text-sm ${
-                          isActive ? 'text-blue-600' : 'text-gray-900'
+                          isActive ? 'text-blue-600 dark:text-blue-400' : 'text-gray-900 dark:text-gray-100'
                         } ${lang.code === 'ar' ? 'font-arabic' : ''}`}>
                           {lang.label}
                         </p>
-                        <p className="text-xs text-gray-500 uppercase">
+                        <p className="text-xs text-gray-500 dark:text-gray-400 uppercase">
                           {lang.short}
                         </p>
                       </div>
                     </div>
                     
                     {isActive && (
-                      <Check size={18} className="text-blue-600 animate-scaleIn" />
+                      <Check size={18} className="text-blue-600 dark:text-blue-400 animate-scaleIn" />
                     )}
                   </button>
                 );

@@ -8,16 +8,15 @@ export default function HowItWorks({ content, lang }: { content: any; lang: stri
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-24 bg-white overflow-hidden"> 
+    <section className="py-24 bg-white dark:bg-slate-900 overflow-hidden transition-colors duration-300">
       <div className="container mx-auto px-4">
-
         <div className="text-center mb-20">
           <motion.h2
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 ${lang === 'ar' ? 'font-arabic' : ''}`}
+            className={`text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 ${lang === 'ar' ? 'font-arabic' : ''}`}
           >
             {content.title}
           </motion.h2>
@@ -31,13 +30,13 @@ export default function HowItWorks({ content, lang }: { content: any; lang: stri
         </div>
 
         <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto items-start relative">
-            <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-1 bg-gray-100 -z-0">
+            <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-1 bg-gray-100 dark:bg-slate-800 -z-0">
                 <motion.div 
                     initial={{ scaleX: 0 }}
                     whileInView={{ scaleX: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1.5, ease: "easeInOut" }}
-                    className="h-full bg-blue-100 origin-left"
+                    className="h-full bg-blue-100 dark:bg-blue-900/40 origin-left"
                 />
             </div>
 
@@ -64,7 +63,7 @@ export default function HowItWorks({ content, lang }: { content: any; lang: stri
                         ? '0 25px 50px -12px rgba(59, 130, 246, 0.25)' 
                         : '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
                   }}
-                  className="bg-white rounded-3xl p-8 text-center h-full flex flex-col relative border border-gray-100 z-10"
+                  className="bg-white dark:bg-slate-800 rounded-3xl p-8 text-center h-full flex flex-col relative border border-gray-100 dark:border-slate-700 z-10 transition-colors duration-300"
                 >
                   <motion.div
                     initial={{ scale: 0 }}
@@ -80,20 +79,20 @@ export default function HowItWorks({ content, lang }: { content: any; lang: stri
                         scale: isHovered ? 1.1 : 1,
                         backgroundColor: isHovered ? '#1d4ed8' : '#3b82f6'
                     }}
-                    className="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-8 text-white shadow-xl shadow-blue-200"
+                    className="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-8 text-white shadow-xl shadow-blue-200 dark:shadow-none"
                   >
                     <Icon size={40} strokeWidth={1.5} />
                   </motion.div>
 
                   <h3
                     className={`text-2xl font-bold mb-4 transition-colors duration-300 ${
-                      isHovered ? 'text-blue-600' : 'text-gray-900'
+                      isHovered ? 'text-blue-600 dark:text-blue-400' : 'text-gray-900 dark:text-white'
                     } ${lang === 'ar' ? 'font-arabic' : ''}`}
                   >
                     {step.title}
                   </h3>
 
-                  <p className="text-gray-600 leading-relaxed flex-grow text-lg">{step.desc}</p>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed flex-grow text-lg">{step.desc}</p>
                 </motion.div>
               </motion.div>
             );

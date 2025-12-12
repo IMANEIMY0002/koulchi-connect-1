@@ -1,11 +1,13 @@
-
-// tailwind.config.ts
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./*.{js,ts,jsx,tsx}",
+    "./index.html"
   ],
   theme: {
     extend: {
@@ -17,13 +19,11 @@ const config: Config = {
           300: "#93c5fd",
           400: "#60a5fa",
           500: "#3b82f6",
-          600: "#2563eb",  
-          700: "#1d4ed8",  
+          600: "#2563eb",
+          700: "#1d4ed8",
           800: "#1e40af",
           900: "#1e3a8a",
         },
-
-        
         gray: {
           50: "#f9fafb",
           100: "#f3f4f6",
@@ -33,11 +33,9 @@ const config: Config = {
           500: "#6b7280",
           600: "#4b5563",
           700: "#374151",
-          800: "#1f2937", 
+          800: "#1f2937",
           900: "#111827",
         },
-
-      
         accent: {
           50: "#fefce8",
           100: "#fef9c3",
@@ -50,8 +48,6 @@ const config: Config = {
           800: "#854d0e",
           900: "#713f12",
         },
-
-       
         brand: {
           50: "#eff6ff",
           100: "#dbeafe",
@@ -65,7 +61,6 @@ const config: Config = {
           900: "#1e3a8a",
         },
       },
-
       fontFamily: {
         sans: ["Inter", "sans-serif"],
         arabic: ["'Noto Sans Arabic'", "sans-serif"],

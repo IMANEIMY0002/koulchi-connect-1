@@ -52,23 +52,23 @@ export default function Gallery({ content, lang }: GalleryProps) {
   };
 
   return (
-    <section className="py-24 bg-gray-50 overflow-hidden">
+    <section className="py-24 bg-gray-50 dark:bg-slate-950 overflow-hidden transition-colors duration-300">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${lang === 'ar' ? 'font-arabic' : ''}`}
+            className={`text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 ${lang === 'ar' ? 'font-arabic' : ''}`}
           >
             {content.title}
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto"
+            className="text-gray-600 dark:text-gray-300 text-lg md:text-xl max-w-2xl mx-auto"
           >
             {content.subtitle}
           </motion.p>
@@ -76,7 +76,7 @@ export default function Gallery({ content, lang }: GalleryProps) {
 
         {/* Carousel Container */}
         <div className="relative max-w-5xl mx-auto">
-          <div className="relative h-[400px] md:h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl bg-gray-900">
+          <div className="relative h-[400px] md:h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl bg-gray-900 dark:bg-black border border-gray-200 dark:border-slate-800">
             <AnimatePresence initial={false} custom={direction}>
               <motion.div
                 key={currentIndex}
@@ -157,7 +157,7 @@ export default function Gallery({ content, lang }: GalleryProps) {
                 className={`transition-all duration-300 ${
                   index === currentIndex
                     ? 'w-10 h-3 bg-primary-600'
-                    : 'w-3 h-3 bg-gray-300 hover:bg-gray-400'
+                    : 'w-3 h-3 bg-gray-300 dark:bg-slate-700 hover:bg-gray-400 dark:hover:bg-slate-600'
                 } rounded-full`}
               />
             ))}
