@@ -1,13 +1,13 @@
-// src/constants/content.ts
 import { ContentSections } from '@/types';
 
 export const TEXT_CONTENT: Record<'fr' | 'ar' | 'en', ContentSections> = {
   fr: {
-    nav: { 
-      services: "Services", 
-      features: "Avantages", 
-      providerCta: "Devenir Prestataire", 
-      download: "Télécharger" 
+    nav: {
+      services: "Services",
+      features: "Avantages",
+      providerCta: "Devenir Prestataire",
+      download: "Télécharger",
+      contact: "Contact"
     },
     hero: {
       title: "Des artisans fiables, à portée de main.",
@@ -16,24 +16,24 @@ export const TEXT_CONTENT: Record<'fr' | 'ar' | 'en', ContentSections> = {
       ctaProvider: "Devenir Prestataire",
       trustedBy: "Faites confiance à nos experts vérifiés",
       common: {
-        guaranteedService: "Service Garanti", 
-        verifiedPros: "Professionnels Vérifiés", 
+        guaranteedService: "Service Garanti",
+        verifiedPros: "Professionnels Vérifiés",
       },
     },
     howItWorks: {
       title: "Comment ça marche ?",
       steps: [
-        { 
-          title: "Sélectionnez un service", 
-          desc: "Choisissez parmi une large gamme de services : plomberie, électricité, nettoyage..." 
+        {
+          title: "Sélectionnez un service",
+          desc: "Choisissez parmi une large gamme de services : plomberie, électricité, nettoyage..."
         },
-        { 
-          title: "Choisissez un artisan", 
-          desc: "Comparez les profils, les avis et les prix des professionnels disponibles." 
+        {
+          title: "Choisissez un artisan",
+          desc: "Comparez les profils, les avis et les prix des professionnels disponibles."
         },
-        { 
-          title: "Réservez instantanément", 
-          desc: "Validez votre demande et suivez l'arrivée de votre prestataire en temps réel." 
+        {
+          title: "Réservez instantanément",
+          desc: "Validez votre demande et suivez l'arrivée de votre prestataire en temps réel."
         },
       ]
     },
@@ -54,7 +54,7 @@ export const TEXT_CONTENT: Record<'fr' | 'ar' | 'en', ContentSections> = {
     features: {
       badge: "Nos Avantages",
       title: "Pourquoi choisir KoulchiConnect ?",
-      subtitle: "Découvrez pourquoi des milliers de Marocains nous font confiance", 
+      subtitle: "Découvrez pourquoi des milliers de Marocains nous font confiance",
       items: [
         { title: "Artisans vérifiés", desc: "Identité et compétences rigoureusement contrôlées." },
         { title: "Réservation rapide", desc: "Processus simple en 3 étapes pour trouver de l'aide." },
@@ -62,6 +62,32 @@ export const TEXT_CONTENT: Record<'fr' | 'ar' | 'en', ContentSections> = {
         { title: "Avis & évaluations", desc: "Consultez les retours authentiques d'autres clients." },
         { title: "Support bilingue", desc: "Assistance disponible en arabe et en français." },
         { title: "Notifications", desc: "Restez informé à chaque étape de votre service." },
+      ]
+    },
+    gallery: {
+      title: "Nos Réalisations",
+      subtitle: "Découvrez les projets réalisés par nos artisans qualifiés",
+      images: [
+        {
+          title: "Rénovation Complète",
+          category: "Plomberie",
+          image: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=1200&q=80"
+        },
+        {
+          title: "Installation Électrique",
+          category: "Électricité",
+          image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&q=80"
+        },
+        {
+          title: "Peinture Moderne",
+          category: "Peinture",
+          image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=1200&q=80"
+        },
+        {
+          title: "Nettoyage Professionnel",
+          category: "Nettoyage",
+          image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&q=80"
+        },
       ]
     },
     provider: {
@@ -90,6 +116,25 @@ export const TEXT_CONTENT: Record<'fr' | 'ar' | 'en', ContentSections> = {
         cities: "Villes couvertes"
       },
     },
+    contact: {
+      badge: "Contact",
+      title: "Une question ? Contactez-nous",
+      subtitle: "Notre équipe est là pour vous aider du lundi au samedi.",
+      form: {
+        name: "Votre nom complet",
+        email: "Votre adresse email",
+        phone: "Votre numéro de téléphone",
+        message: "Comment pouvons-nous vous aider ?",
+        submit: "Envoyer le message",
+        success: "Message envoyé avec succès !"
+      },
+      info: {
+        address: "Technopark, Casablanca, Maroc",
+        email: "contact@koulchiconnect.ma",
+        phone: "+212 5 22 00 00 00",
+        hours: "Lun - Sam: 9h00 - 19h00"
+      }
+    },
     footer: {
       about: "Première plateforme marocaine dédiée aux services d'artisans et de maintenance à domicile.",
       links: "Liens rapides",
@@ -101,40 +146,15 @@ export const TEXT_CONTENT: Record<'fr' | 'ar' | 'en', ContentSections> = {
       location: "Casablanca, Maroc",
       trademark: "Tous droits réservés. KoulchiConnect est une marque déposée."
     },
-       gallery: {
-      title: "Nos Réalisations",
-      subtitle: "Découvrez les projets réalisés par nos artisans qualifiés",
-      images: [
-        {
-          title: "Rénovation Complète",
-          category: "Plomberie",
-          image: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=1200&q=80"
-        },
-        {
-          title: "Installation Électrique",
-          category: "Électricité",
-          image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&q=80"
-        },
-        {
-          title: "Peinture Moderne",
-          category: "Peinture",
-          image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=1200&q=80"
-        },
-        {
-          title: "Nettoyage Professionnel",
-          category: "Nettoyage",
-          image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&q=80"
-        },
-      ]
-    }
   },
 
   ar: {
-    nav: { 
-      services: "الخدمات", 
-      features: "المميزات", 
-      providerCta: "انضم كمقاول", 
-      download: "تحميل التطبيق" 
+    nav: {
+      services: "الخدمات",
+      features: "المميزات",
+      providerCta: "انضم كمقاول",
+      download: "تحميل التطبيق",
+      contact: "اتصل بنا"
     },
     hero: {
       title: "حرفيون موثوقون، في متناول يديك.",
@@ -144,7 +164,7 @@ export const TEXT_CONTENT: Record<'fr' | 'ar' | 'en', ContentSections> = {
       trustedBy: "ثق بخبرائنا الموثقين",
       common: {
         guaranteedService: "خدمة مضمونة",
-        verifiedPros: "محترفون موثقون", 
+        verifiedPros: "محترفون موثقون",
       },
     },
     howItWorks: {
@@ -171,7 +191,7 @@ export const TEXT_CONTENT: Record<'fr' | 'ar' | 'en', ContentSections> = {
     },
     features: {
       badge: "مزايا",
-      subtitle: "اكتشف لماذا يثق بنا آلاف المغاربة", 
+      subtitle: "اكتشف لماذا يثق بنا آلاف المغاربة",
       title: "لماذا تختار كولشي كونكت؟",
       items: [
         { title: "حرفيون تم التحقق منهم", desc: "تم فحص الهوية والمهارات بدقة." },
@@ -180,6 +200,32 @@ export const TEXT_CONTENT: Record<'fr' | 'ar' | 'en', ContentSections> = {
         { title: "تقييمات وآراء", desc: "اطلع على آراء حقيقية من عملاء آخرين." },
         { title: "دعم ثنائي اللغة", desc: "مساعدة متاحة باللغتين العربية والفرنسية." },
         { title: "إشعارات", desc: "ابق على اطلاع في كل مرحلة من مراحل خدمتك." },
+      ]
+    },
+    gallery: {
+      title: "إنجازاتنا",
+      subtitle: "اكتشف المشاريع التي أنجزها حرفيونا المؤهلون",
+      images: [
+        {
+          title: "تجديد كامل",
+          category: "السباكة",
+          image: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=1200&q=80"
+        },
+        {
+          title: "التركيب الكهربائي",
+          category: "الكهرباء",
+          image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&q=80"
+        },
+        {
+          title: "دهان عصري",
+          category: "الصباغة",
+          image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=1200&q=80"
+        },
+        {
+          title: "تنظيف احترافي",
+          category: "التنظيف",
+          image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&q=80"
+        },
       ]
     },
     provider: {
@@ -208,6 +254,25 @@ export const TEXT_CONTENT: Record<'fr' | 'ar' | 'en', ContentSections> = {
         cities: "مدن مغطاة"
       },
     },
+    contact: {
+      badge: "اتصل بنا",
+      title: "هل لديك سؤال؟ اتصل بنا",
+      subtitle: "فريقنا هنا لمساعدتك من الاثنين إلى السبت.",
+      form: {
+        name: "الاسم الكامل",
+        email: "البريد الإلكتروني",
+        phone: "رقم الهاتف",
+        message: "كيف يمكننا مساعدتك؟",
+        submit: "إرسال الرسالة",
+        success: "تم إرسال الرسالة بنجاح!"
+      },
+      info: {
+        address: "تكنوبارك، الدار البيضاء، المغرب",
+        email: "contact@koulchiconnect.ma",
+        phone: "+212 5 22 00 00 00",
+        hours: "الاثنين - السبت: 9:00 - 19:00"
+      }
+    },
     footer: {
       about: "أول منصة مغربية مخصصة لخدمات الحرفيين والصيانة المنزلية.",
       links: "روابط سريعة",
@@ -219,40 +284,15 @@ export const TEXT_CONTENT: Record<'fr' | 'ar' | 'en', ContentSections> = {
       location: "الدار البيضاء، المغرب",
       trademark: "جميع الحقوق محفوظة. KoulchiConnect هي علامة تجارية مسجلة."
     },
-       gallery: {
-      title: "إنجازاتنا",
-      subtitle: "اكتشف المشاريع التي أنجزها حرفيونا المؤهلون",
-      images: [
-        {
-          title: "تجديد كامل",
-          category: "السباكة",
-          image: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=1200&q=80"
-        },
-        {
-          title: "التركيب الكهربائي",
-          category: "الكهرباء",
-          image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&q=80"
-        },
-        {
-          title: "دهان عصري",
-          category: "الصباغة",
-          image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=1200&q=80"
-        },
-        {
-          title: "تنظيف احترافي",
-          category: "التنظيف",
-          image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&q=80"
-        },
-      ]
-    }
   },
 
   en: {
-    nav: { 
-      services: "Services", 
-      features: "Features", 
-      providerCta: "Become a Provider", 
-      download: "Download" 
+    nav: {
+      services: "Services",
+      features: "Features",
+      providerCta: "Become a Provider",
+      download: "Download",
+      contact: "Contact"
     },
     hero: {
       title: "Reliable craftsmen, at your fingertips.",
@@ -261,24 +301,24 @@ export const TEXT_CONTENT: Record<'fr' | 'ar' | 'en', ContentSections> = {
       ctaProvider: "Become a Provider",
       trustedBy: "Trust our verified experts",
       common: {
-        guaranteedService: "Guaranteed Service", 
-        verifiedPros: "Verified Professionals", 
+        guaranteedService: "Guaranteed Service",
+        verifiedPros: "Verified Professionals",
       },
     },
     howItWorks: {
       title: "How does it work?",
       steps: [
-        { 
-          title: "Select a service", 
-          desc: "Choose from a wide range of services: plumbing, electricity, cleaning..." 
+        {
+          title: "Select a service",
+          desc: "Choose from a wide range of services: plumbing, electricity, cleaning..."
         },
-        { 
-          title: "Choose a craftsman", 
-          desc: "Compare profiles, reviews and prices of available professionals." 
+        {
+          title: "Choose a craftsman",
+          desc: "Compare profiles, reviews and prices of available professionals."
         },
-        { 
-          title: "Book instantly", 
-          desc: "Confirm your request and track your provider's arrival in real time." 
+        {
+          title: "Book instantly",
+          desc: "Confirm your request and track your provider's arrival in real time."
         },
       ]
     },
@@ -299,7 +339,7 @@ export const TEXT_CONTENT: Record<'fr' | 'ar' | 'en', ContentSections> = {
     features: {
       badge: "Our Advantages",
       title: "Why choose KoulchiConnect?",
-      subtitle: "Discover why thousands of Moroccans trust us", 
+      subtitle: "Discover why thousands of Moroccans trust us",
       items: [
         { title: "Verified craftsmen", desc: "Identity and skills rigorously checked." },
         { title: "Quick booking", desc: "Simple 3-step process to find help." },
@@ -307,6 +347,32 @@ export const TEXT_CONTENT: Record<'fr' | 'ar' | 'en', ContentSections> = {
         { title: "Reviews & ratings", desc: "Check authentic feedback from other customers." },
         { title: "Bilingual support", desc: "Assistance available in Arabic and French." },
         { title: "Notifications", desc: "Stay informed at every step of your service." },
+      ]
+    },
+    gallery: {
+      title: "Our Achievements",
+      subtitle: "Discover projects completed by our qualified artisans",
+      images: [
+        {
+          title: "Complete Renovation",
+          category: "Plumbing",
+          image: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=1200&q=80"
+        },
+        {
+          title: "Electrical Installation",
+          category: "Electricity",
+          image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&q=80"
+        },
+        {
+          title: "Modern Painting",
+          category: "Painting",
+          image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=1200&q=80"
+        },
+        {
+          title: "Professional Cleaning",
+          category: "Cleaning",
+          image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&q=80"
+        },
       ]
     },
     provider: {
@@ -335,6 +401,25 @@ export const TEXT_CONTENT: Record<'fr' | 'ar' | 'en', ContentSections> = {
         cities: "Cities covered"
       },
     },
+    contact: {
+      badge: "Contact Us",
+      title: "Have a question? Get in touch",
+      subtitle: "Our team is here to help you Mon-Sat.",
+      form: {
+        name: "Full Name",
+        email: "Email Address",
+        phone: "Phone Number",
+        message: "How can we help you?",
+        submit: "Send Message",
+        success: "Message sent successfully!"
+      },
+      info: {
+        address: "Technopark, Casablanca, Morocco",
+        email: "contact@koulchiconnect.ma",
+        phone: "+212 5 22 00 00 00",
+        hours: "Mon - Sat: 9:00 AM - 7:00 PM"
+      }
+    },
     footer: {
       about: "Morocco's first platform dedicated to craftsmen and home maintenance services.",
       links: "Quick links",
@@ -346,31 +431,5 @@ export const TEXT_CONTENT: Record<'fr' | 'ar' | 'en', ContentSections> = {
       location: "Casablanca, Morocco",
       trademark: "All rights reserved. KoulchiConnect is a registered trademark."
     },
-     gallery: {
-      title: "Our Achievements",
-      subtitle: "Discover projects completed by our qualified artisans",
-      images: [
-        {
-          title: "Complete Renovation",
-          category: "Plumbing",
-          image: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=1200&q=80"
-        },
-        {
-          title: "Electrical Installation",
-          category: "Electricity",
-          image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&q=80"
-        },
-        {
-          title: "Modern Painting",
-          category: "Painting",
-          image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=1200&q=80"
-        },
-        {
-          title: "Professional Cleaning",
-          category: "Cleaning",
-          image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&q=80"
-        },
-      ]
-    }
   }
 };

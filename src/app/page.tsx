@@ -11,6 +11,7 @@ import Features from '@/components/Features';
 import ProviderCTA from '@/components/ProviderCTA';
 import Footer from '@/components/Footer';
 import Gallery from '@/components/Gallery';
+import Contact from '@/components/Contact';
 
 
 
@@ -57,6 +58,7 @@ export default function Home() {
       <Features content={t.features} lang={lang} />
       <Gallery content={t.gallery} lang={lang} />
       <ProviderCTA content={t.provider} lang={lang} />
+       <Contact content={t.contact} lang={lang} />
       <Footer content={t.footer} nav={t.nav} lang={lang} />
     </div>
   );

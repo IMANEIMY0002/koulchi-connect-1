@@ -2,10 +2,10 @@
 import { Menu, X, Download } from 'lucide-react';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useState, useEffect } from 'react';
-import { Language } from '../types';
+import { Language, ContentSections } from '../types';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export default function Navbar({ lang, content, setLang }: { lang: Language; content: any; setLang: (l: Language) => void }) {
+export default function Navbar({ lang, content, setLang }: { lang: Language; content: ContentSections['nav']; setLang: (l: Language) => void }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -17,13 +17,11 @@ export default function Navbar({ lang, content, setLang }: { lang: Language; con
 
   return (
     <>
-      <motion.nav 
+      <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-            scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'
-        }`}
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'}`}
       >
         <div className="container mx-auto px-4 flex justify-between items-center">
           <a href="#" className="flex items-center gap-3 group">
@@ -45,6 +43,9 @@ export default function Navbar({ lang, content, setLang }: { lang: Language; con
             </a>
             <a href="#provider" className="text-gray-700 hover:text-primary-600 font-medium transition-colors hover:scale-105">
               {content.providerCta}
+            </a>
+            <a href="#contact" className="text-gray-700 hover:text-primary-600 font-medium transition-colors hover:scale-105">
+              {content.contact}
             </a>
             
             <div className="h-6 w-px bg-gray-200 mx-2"></div>
@@ -111,6 +112,13 @@ export default function Navbar({ lang, content, setLang }: { lang: Language; con
                   className="block text-gray-800 hover:text-primary-600 text-lg py-3 px-4 rounded-xl hover:bg-gray-50 transition-all font-medium"
                 >
                   {content.providerCta}
+                </a>
+                <a 
+                  href="#contact" 
+                  onClick={() => setMobileOpen(false)} 
+                  className="block text-gray-800 hover:text-primary-600 text-lg py-3 px-4 rounded-xl hover:bg-gray-50 transition-all font-medium"
+                >
+                  {content.contact}
                 </a>
                 
                 <button 

@@ -1,7 +1,7 @@
 export type Language = 'fr' | 'ar' | 'en';
 
 export interface ContentSections {
-  nav: { services: string; features: string; providerCta: string; download: string };
+  nav: { services: string; features: string; providerCta: string; contact: string; download: string };
   hero: { title: string; subtitle: string; ctaUser: string; ctaProvider: string; trustedBy: string ; common: {
       guaranteedService: string,
       verifiedPros:string}};
@@ -45,6 +45,25 @@ export interface ContentSections {
       category: string;
       image: string;
     }[];
+  };
+   contact: { 
+    badge: string;
+    title: string;
+    subtitle: string;
+    form: {
+      name: string;
+      email: string;
+      phone: string;
+      message: string;
+      submit: string;
+      success: string;
+    };
+    info: {
+      address: string;
+      email: string;
+      phone: string;
+      hours: string;
+    }
   };
 }
   
