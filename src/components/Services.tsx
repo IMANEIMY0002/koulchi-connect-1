@@ -1,7 +1,7 @@
 'use client';
 
 import { Droplets, Zap, Sparkles, Paintbrush, Hammer, Home, Wind, Wrench } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
 const icons = [Droplets, Zap, Sparkles, Paintbrush, Hammer, Home, Wind, Wrench];
@@ -32,6 +32,21 @@ export default function Services({ content, lang }: { content: any; lang: string
         id: i,
       }));
 
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 50 } }
+  };
+
   return (
     <section id="services" className="py-20 bg-gray-50 dark:bg-slate-950 transition-colors duration-300">
       <div className="container mx-auto px-4">
@@ -52,13 +67,20 @@ export default function Services({ content, lang }: { content: any; lang: string
         </div>
         
         {/* Grid Services */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5"
+        >
           {displayItems.map((item: any, idx: number) => {
             const Icon = item.OriginalIcon;
             
             return (
-              <div
+              <motion.div
                 key={item?.id}
+                variants={itemVariants}
                 className="relative group block p-2 h-full w-full"
                 onMouseEnter={() => setHoveredIndex(idx)}
                 onMouseLeave={() => setHoveredIndex(null)}
@@ -100,10 +122,10 @@ export default function Services({ content, lang }: { content: any; lang: string
                     {item.desc}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

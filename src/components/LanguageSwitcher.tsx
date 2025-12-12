@@ -34,15 +34,15 @@ export default function LanguageSwitcher({
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:border-gray-300 dark:hover:border-slate-600 hover:shadow-sm transition-all duration-200"
+        className="flex items-center gap-1.5 px-2.5 py-1.5 md:px-4 md:py-2.5 rounded-full border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:border-gray-300 dark:hover:border-slate-600 hover:shadow-sm transition-all duration-200"
       >
-        <Globe size={18} className="text-blue-600 dark:text-blue-400" />
-        <span className="font-semibold text-gray-900 dark:text-white text-sm uppercase tracking-wide">
+        <Globe size={16} className="text-blue-600 dark:text-blue-400 md:w-[18px] md:h-[18px]" />
+        <span className="font-semibold text-gray-900 dark:text-white text-xs md:text-sm uppercase tracking-wide">
           {currentLanguage?.short}
         </span>
         <ChevronDown
-          size={16}
-          className={`text-gray-500 dark:text-gray-400 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+          size={14}
+          className={`text-gray-500 dark:text-gray-400 transition-transform duration-200 md:w-4 md:h-4 ${isOpen ? 'rotate-180' : ''}`}
         />
       </button>
 

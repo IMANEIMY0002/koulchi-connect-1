@@ -70,7 +70,7 @@ export default function Hero({
               </div>
 
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center">
+                <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
                   <span className="text-primary-600 dark:text-primary-400 text-lg">⭐</span>
                 </div>
                 <span className="text-gray-700 dark:text-gray-300 font-medium">
